@@ -4,7 +4,7 @@ class RenrenSpider(scrapy.Spider):
     name = "renren"
     allowed_domains = ["renren.com"]
     start_urls = [
-        "http://status.renren.com/status/v7/419208280"
+        ""
     ]
 
     def __init__(self):
@@ -12,7 +12,7 @@ class RenrenSpider(scrapy.Spider):
         self.passwd = input("input your renren\'s password:\n")
 
     def start_requests(self):
-        return [scrapy.FormRequest('http://www.renren.com/PLogin.do',
+        return [scrapy.FormRequest('http://3g.renren.com',
             formdata={'email':self.username,'password':self.passwd},
             callback=self.login)]
 
